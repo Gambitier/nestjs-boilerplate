@@ -42,7 +42,7 @@ export class SuccessResponseInterceptor implements NestInterceptor {
 
     const entity: AuditingData = {
       created_at: new Date(),
-      user: 'req.user',
+      user: req.user,
       route: route?.toLowerCase(),
       request: {
         method: req?.method ?? null,

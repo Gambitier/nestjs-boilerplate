@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuditConnectionName } from 'src/configs';
+import { AuditServiceProvider } from './providers';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { AuditConnectionName } from 'src/configs';
     ),
   ],
   controllers: [],
-  providers: [],
-  exports: [],
+  providers: [AuditServiceProvider],
+  exports: [AuditServiceProvider],
 })
-export class ActivitiesModule {}
+export class AuditLogsModule {}
