@@ -59,12 +59,16 @@ export class OtpRepository implements IOtpRepository {
 
     const otpData: Prisma.OtpCreateInput = {
       OTP: otp,
-      userId: userDto.id,
       userName: userDto.userName,
       phoneWork: userDto.mobileNumber,
       validFrom: validFrom,
       validTo: validTo,
       isValidated: false,
+      user: {
+        connect: {
+          id: userDto.id,
+        },
+      },
     };
 
     // before creating new OTP, expire previous ones
