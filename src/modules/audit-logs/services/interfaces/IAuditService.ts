@@ -13,7 +13,7 @@ export interface ParamsDict {
 
 export type AuditingData = {
   created_at: Date;
-  user: 'Express.User' | 'req.user'; // todo remove 'req.user' and single quotes around Express.User
+  user: Express.User;
   route: string;
   request: {
     method: string;

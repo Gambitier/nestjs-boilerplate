@@ -18,9 +18,11 @@ import {
   ExceptionInterceptor,
 } from './helper-modules/buisiness-exception';
 import { SuccessResponseInterceptor } from './helper-modules/success-response';
+import { AuditLogsModule } from './modules/audit-logs/audit-logs.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { JwtGuard, RolesGuard } from './modules/auth/common';
 import { CommunicationModule } from './modules/communication/communication.module';
+import { S3ManagerModule } from './modules/s3-manager/s3-manager.module';
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { CommunicationModule } from './modules/communication/communication.modul
     AwsSdkModule.forRootAsync(S3ModuleConfig),
     CommunicationModule,
     AuthModule,
+    S3ManagerModule,
+    AuditLogsModule,
   ],
   controllers: [],
   providers: [
