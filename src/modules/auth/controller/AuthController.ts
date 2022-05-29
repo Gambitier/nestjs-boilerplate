@@ -18,15 +18,15 @@ import {
   JwtQueryParamGuard,
   LocalAuthGuard,
   OTPAuthGuard,
-} from './common';
+} from '../common';
 import {
   ChangePasswordDto,
   ForgetPasswordDto,
   GenerateOtpDto,
   ResetPassTokenDto,
   Tokens,
-} from './dto';
-import { IAuthService } from './services';
+} from '../dto';
+import { IAuthService } from '../services';
 
 @ApiBearerAuth()
 @ApiTags('auth')
